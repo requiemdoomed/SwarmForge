@@ -1,0 +1,16 @@
+[project]
+name = "swarmforge"
+version = "2.1.0"
+description = "Educational tracker-coordinated peer-to-peer file distribution system with responsive GUI"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Swayam Shakya" }]
+license = { text = "MIT" }
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 110

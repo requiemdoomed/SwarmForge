@@ -1,0 +1,4 @@
+Project: SwarmForge Advanced Edition 2.1.0
+Author: Swayam Shakya
+
+AI tools were used as a supporting resource during selected design, troubleshooting, and documentation tasks.
