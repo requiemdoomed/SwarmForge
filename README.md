@@ -1,4 +1,4 @@
-# SwarmForge — Advanced Edition 2.1.0
+# SwarmForge 
 
 **Author: Swayam Shakya**
 
@@ -6,7 +6,7 @@
 
 > This is a teaching implementation inspired by BitTorrent concepts, not a compatible implementation of the official BitTorrent protocol.
 
-## GUI highlights (2.1.0)
+## GUI highlights 
 
 ![SwarmForge dashboard preview](GUI_PREVIEW.png)
 
@@ -21,7 +21,7 @@ The GUI was smoke-tested under a virtual X display for construction, theme toggl
 
 ## AI assistance
 
-AI tools were used as a supporting resource during development for selected design discussions, troubleshooting, and wording improvements. SwarmForge does not call an AI model at runtime. The author remains responsible for reviewing the code, understanding the implementation, and following any course rules on acknowledging AI assistance.
+AI tools were used as a supporting resource during development for selected design discussions, troubleshooting, and wording improvements. 
 
 ## What you can learn
 
@@ -133,16 +133,6 @@ python3 scripts/benchmark.py --megabytes 4 --piece-kib 256
 ```
 
 The integration test checks the important distributed behavior: the first empty peer discovers the seed's manifest, downloads and verifies pieces, reconstructs the file, and then serves those pieces to a second empty peer. It uses temporary test data and an isolated tracker port.
-
-## Distribute your own file
-
-The helper splits an arbitrary file into configured piece files. It prints the environment variables that every tracker/node in that swarm must share:
-
-```bash
-python3 scripts/prepare_torrent.py ./myfile.zip --pieces-dir ./myfile_pieces --piece-size 262144
-```
-
-Copy the printed `export SWARMFORGE_...` lines into each terminal, then start `tracker.py`, a seed node whose `--share-dir` is the generated pieces directory, and one or more empty peers. The final reconstructed file uses the original filename. Keep the generated piece filenames and their order identical for all nodes. The helper does not upload or transmit your file; it only prepares local piece files.
 
 ## Advanced reliability features
 
